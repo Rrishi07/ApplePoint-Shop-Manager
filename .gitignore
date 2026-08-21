@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+backend/.env
+backend/applepoint.db
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
