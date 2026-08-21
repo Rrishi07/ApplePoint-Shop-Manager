@@ -10,6 +10,11 @@ class Settings(BaseSettings):
     low_stock_default: int = 3
     upload_dir: str = "uploads"
 
+    # Supabase Storage for persistent accessory photos on Render Free.
+    supabase_url: str = ""
+    supabase_secret_key: str = ""
+    supabase_storage_bucket: str = "product-images"
+
     # Authentication is handled by Firebase through this FastAPI backend.
     # No Gmail/SMTP username, password, or Google App Password is required.
     auth_provider: str = "firebase"

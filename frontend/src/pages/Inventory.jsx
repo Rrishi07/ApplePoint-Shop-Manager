@@ -43,6 +43,11 @@ const empty = {
 
 const money = (n) => `Rs ${Number(n || 0).toLocaleString()}`
 
+const imageUrl = (url) => {
+  if (!url) return ''
+  return /^https?:\/\//i.test(url) ? url : `${API_URL}${url}`
+}
+
 function stockInfo(item) {
   const status = String(item.stock_status || '').toUpperCase()
   if (item.quantity <= 0 || status === 'OUT') {
@@ -221,7 +226,7 @@ export default function Inventory() {
             <article className="ap-accessory-card" key={item.id}>
               <div className="ap-accessory-image">
                 {item.photo_url ? (
-                  <img src={`${API_URL}${item.photo_url}`} alt={item.name} />
+                  <img src={imageUrl(item.photo_url)} alt={item.name} />
                 ) : (
                   <div className="ap-accessory-placeholder">
                     <ImagePlus size={36} />
